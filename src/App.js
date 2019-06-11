@@ -6,12 +6,15 @@ import actors from "./actors.json";
 import "./App.css";
 
 class App extends Component {
-  state = {
-    actors,
-    winLoss: "",
-    clicked: [],
-    currentScore: 0,
-    highScore: 0
+  constructor(props) {
+    super(props);
+    this.state = {
+      actors,
+      clicked: [],
+      currentScore: 0,
+      highScore: 0
+    }
+    this.handleClick = this.handleClick.bind(this);
   };
 
   shuffleArray(array) {
@@ -24,8 +27,9 @@ class App extends Component {
 
   handleClick = id => {
     if (this.state.clicked.indexOf(id) === -1) {
-      this.handleIncrement();
       this.setState({ clicked: this.state.clicked.concat(id) });
+      this.handleIncrement();
+      this.handleShuffle();
     } else {
       this.handleReset();
     }
@@ -37,12 +41,20 @@ class App extends Component {
   };
 
   handleReset = () => {
-    this.setState({
-      currentScore: 0,
-      highScore: this.state.highScore,
-      winLoss: "Raté !",
-      clicked: []
-    });
+    if (this.state.currentScore > this.state.highScore) {
+      this.setState({
+        currentScore: 0,
+        highScore: this.state.currentScore,
+        clicked: []
+      });
+    }
+    else {
+      this.setState({
+        currentScore: 0,
+        clicked: []
+      });
+
+    }
     this.handleShuffle();
   }
 
@@ -58,6 +70,7 @@ class App extends Component {
           <Header>Jeu de Mémoire</Header>
           <h3>Cliquez une photo pour marquer des points. Mais attention : si vous cliquez deux fois le même acteur, vous perdez le jeu...</h3>
           <h2>Votre score: {this.state.currentScore}</h2>
+          <h2>High score: {this.state.highScore}</h2>
         </div>
         <br></br>
         <div className="game-board">
