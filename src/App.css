@@ -3,8 +3,8 @@
   color: white;
 }
 
-.no-class {
-  background-image: url("/public/images/movie-house.jpg");
+root {
+  background-image: "url('/public/images/movie-house.jpg')";
   background-size: 100%;
 }
 
