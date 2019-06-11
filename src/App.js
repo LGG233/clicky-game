@@ -67,11 +67,18 @@ class App extends Component {
     return (
       <Wrapper>
         <div className="jumbotron">
-          <Header>Jeu de Mémoire</Header>
-          <h2>Reconnaissez-vous ces acteurs? Cliquez leurs photos pour marquer des points. Mais attention : si vous choissisez la même star deux fois, vous perdez le jeu...</h2>
+          <Header>Jeu de Mémoire Stars du Cinéma Français</Header>
+          <h2>Le but du jeu : marquer des points en choississant les stars une par une en cliquant dessus. Mais attention : si vous sélectionnez la même personne deux fois, vous perdez le jeu...</h2>
         </div>
         <div className="game-board">
-          <h3>Votre score: {this.state.currentScore}  High score: {this.state.highScore}</h3>
+          <div className="row">
+            <div className="col-md-6 center">
+              <h3>Votre score: {this.state.currentScore}</h3>
+            </div>
+            <div className="col-md-6 center">
+              <h3>Record: {this.state.highScore}</h3>
+            </div>
+          </div>
           <div className="row">
             {this.state.actors.map(actor => (
               <ActorCard

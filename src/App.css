@@ -3,10 +3,18 @@
   color: white;
 }
 
+.no-class {
+  background-image: url("/public/images/movie-house.jpg");
+  background-size: 100%;
+}
+
 .App {
   text-align: center;
 }
 
+.center {
+  text-align: center;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
