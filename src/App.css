@@ -31,3 +31,7 @@
     transform: rotate(360deg);
   }
 }
+
+.game-board {
+  width: 75%;
+}
