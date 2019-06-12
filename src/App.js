@@ -65,7 +65,7 @@ class App extends Component {
 
   render() {
     return (
-      <Wrapper>;
+      <Wrapper className="background">;
         <div className="jumbotron">
           <Header>Jeu de Mémoire Stars du Cinéma Français</Header>
           <h2>Le but du jeu : marquer des points en choississant les stars une par une. Mais attention : si vous cliquez la même personne deux fois, vous perdez le jeu...</h2>

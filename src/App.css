@@ -3,8 +3,8 @@
   color: white;
 }
 
-root {
-  background-image: "url('/public/images/movie-house.jpg')";
+* {
+  background-image: "url('./images/movie-house.jpg')";
   background-size: 100%;
 }
 
